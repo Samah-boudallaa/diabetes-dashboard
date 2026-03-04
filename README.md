@@ -24,23 +24,23 @@ Dataset: Pima Indians Diabetes Dataset
 
 ## The dataset contains medical diagnostic measurements for female patients, including:
 
-Pregnancies – Number of pregnancies
+Pregnancies: Number of pregnancies
 
-Glucose – Plasma glucose concentration
+Glucose: Plasma glucose concentration
 
-BloodPressure – Diastolic blood pressure
+BloodPressure: Diastolic blood pressure
 
-SkinThickness – Triceps skin fold thickness
+SkinThickness: Triceps skin fold thickness
 
-Insulin – Serum insulin level
+Insulin: Serum insulin level
 
-BMI – Body Mass Index
+BMI: Body Mass Index
 
-DiabetesPedigreeFunction – Genetic influence
+DiabetesPedigreeFunction: Genetic influence
 
-Age – Patient age
+Age: Patient age
 
-Outcome – 0 (Non-Diabetic), 1 (Diabetic)
+Outcome: 0 (Non-Diabetic), 1 (Diabetic)
 
 ## Project Objectives
 
