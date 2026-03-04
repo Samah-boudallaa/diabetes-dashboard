@@ -88,3 +88,29 @@ Pandas
 Plotly
 
 Streamlit
+
+## How to Run the Application:
+
+### Install dependencies:
+pip install -r requirements.txt
+
+### Run the application:
+streamlit run app.py
+
+## Key Insights
+
+Glucose level shows strong correlation with diabetes outcome.
+
+Higher BMI values are associated with increased diabetes risk.
+
+Diabetes prevalence increases with age.
+
+## Future Improvements
+
+Integration of a machine learning prediction model
+
+Multi-page dashboard structure
+
+Deployment on Streamlit Cloud
+
+Advanced statistical analysis
