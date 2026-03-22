@@ -67,8 +67,8 @@ Mini_Projet_Diabete/
     ├── KPIs Cards.png
     ├── Distribution de glucose et IMC .png
     ├── Age vs Glucose et heatmap.png
-    ├── Diabete par Groupe d'Age et repartition global....png
-    ├── Diagramme de Flux (Sankey) — Parcours de Ris....png
+    ├── Diabete par Groupe d'Age et repartition globale .png
+    ├── Diagramme de Flux (Sankey) — Parcours de Risque.png
     ├── Prediction IA — Risque Diabetique Individuel.png
     ├── Guide Sante — Comprendre vos Mesures.png
     └── Importance relative.png
