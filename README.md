@@ -1,195 +1,193 @@
 # AI Diabetes Intelligence Dashboard
 
-## Project Overview
-
-The AI Diabetes Intelligence Dashboard is an interactive data analytics and machine learning application developed using Streamlit, Plotly, and Scikit-learn.
-
-The objective of this project is to explore medical indicators related to diabetes and provide an intelligent visualization platform capable of both data analysis and predictive modeling.
-
-The dashboard enables users to explore the dataset interactively, analyze relationships between health indicators, and estimate diabetes risk using a machine learning model.
+> Mini-Projet DataViz — Module Visualisation de Données  
+> Dataset : Pima Indians Diabetes | Source : Kaggle / UCI  
+> Technologies : Python · Streamlit · Plotly · Scikit-learn · Pandas · NumPy
 
 ---
 
-# Dataset Information
+## Apercu de l'application
 
-Source: Kaggle  
-Dataset: Pima Indians Diabetes Dataset
-
-The dataset contains medical diagnostic measurements for female patients used to predict diabetes.
-
-## Dataset Features
-
-- Pregnancies: Number of pregnancies
-- Glucose: Plasma glucose concentration
-- BloodPressure: Diastolic blood pressure
-- SkinThickness: Triceps skin fold thickness
-- Insulin: Serum insulin level
-- BMI: Body Mass Index
-- DiabetesPedigreeFunction: Genetic influence indicator
-- Age: Patient age
-- Outcome: 0 (Non-Diabetic), 1 (Diabetic)
-
----
-
-# Project Objectives
-
-The main objectives of this project are:
-
-- Perform exploratory data analysis (EDA) on diabetes medical data
-- Build an interactive analytics dashboard
-- Identify key medical indicators influencing diabetes risk
-- Integrate machine learning for diabetes prediction
-- Provide a clean and intuitive interface for healthcare data exploration
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  AI Diabetes Intelligence Dashboard                          Accuracy 77.9%  │
+│  Analyse predictive avancee des facteurs de risque diabetiques               │
+│  [ Machine Learning ]  [ DataViz ]  [ Sante Publique ]                       │
+├──────────────┬──────────────┬──────────────┬──────────────┬──────────────────┤
+│ Total        │ Cas          │ Taux         │ Glucose      │ IMC              │
+│ Patientes    │ Diabetiques  │ Diabete      │ Moyen        │ Moyen            │
+│    768       │    268       │   34.9%      │  121.7 mg/dL │   32.0 kg/m2    │
+├──────────────┴──────────────┴──────────────┴──────────────┴──────────────────┤
+│  SIDEBAR FILTRES          │  GRAPHIQUES PRINCIPAUX                            │
+│  ─────────────────────    │  ──────────────────────────────────────────────  │
+│  Statut Diabetique        │  Distribution Glucose  │  IMC par Statut          │
+│  Age                      │  Age vs Glucose        │  Matrice Correlation     │
+│  IMC                      │  Diabete / Age Group   │  Pie Chart               │
+│  Glucose                  │  Score de Risque       │  Sankey Flow             │
+│  Pression Arterielle      │                                                   │
+│  Insuline                 │  Prediction IA + Guide Sante Personnelle          │
+│  Grossesses               │  Importance des Variables (Random Forest)         │
+└───────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-# Key Features
+## Captures d'ecran
 
-## Interactive Medical Filters
+| KPIs et Distribution | Age vs Glucose et Heatmap |
+|---|---|
+| ![KPIs](Capture%20d'ecran/KPIs%20Cards.png) | ![Age vs Glucose](Capture%20d'ecran/Age%20vs%20Glucose%20et%20heatmap.png) |
 
-The dashboard allows dynamic filtering of the dataset using multiple parameters:
+| Diabete par Age et Repartition | Prediction IA |
+|---|---|
+| ![Age Groups](Capture%20d'ecran/Diabete%20par%20Groupe%20d'Age%20et%20repartition%20global....png) | ![Prediction](Capture%20d'ecran/Prediction%20IA%20—%20Risque%20Diabetique%20Individuel.png) |
 
-- Diabetes status (Diabetic / Non-Diabetic)
-- Gender simulation
-- Age range
-- BMI range
-- Glucose range
-- Blood pressure range
+| Diagramme Sankey | Guide Sante et Tableau |
+|---|---|
+| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20—%20Parcours%20de%20Ris....png) | ![Guide](Capture%20d'ecran/Guide%20Sante%20—%20Comprendre%20vos%20Mesures.png) |
 
-These filters allow users to explore specific patient groups and identify hidden patterns.
-
----
-
-# KPI Indicators
-
-The dashboard displays dynamic KPI cards including:
-
-- Total number of patients
-- Number of diabetic patients
-- Diabetes prevalence rate
-- Average glucose level
-- Average BMI
-
-All indicators update automatically based on selected filters.
+| Importance des Variables |
+|---|
+| ![Importance](Capture%20d'ecran/Importance%20relative.png) |
 
 ---
 
-# Data Visualization
+## Structure du projet
 
-The dashboard includes several interactive visualizations to explore medical patterns.
-
-## Glucose Distribution
-
-Histogram showing the distribution of glucose levels across diabetic and non-diabetic patients.
-
-## BMI Distribution by Diabetes Status
-
-Boxplot highlighting BMI differences between diabetic and non-diabetic individuals.
-
-## Age vs Glucose Relationship
-
-Scatter plot exploring how age and glucose levels interact and influence diabetes risk.
-
-## Correlation Heatmap
-
-Correlation matrix showing relationships between medical variables.
-
----
-
-# Advanced Analytics
-
-## Sankey Flow Analysis
-
-The Sankey diagram visualizes how glucose levels transition into BMI categories, helping identify possible medical risk pathways.
-
-This visualization provides an intuitive way to understand relationships between health indicators.
+```
+Mini_Projet_Diabete/
+│
+├── app.py                          # Application Streamlit principale
+├── analysis.ipynb                  # Notebook analyse et visualisations statiques
+├── diabetes.csv                    # Dataset Pima Indians (768 patientes)
+├── requirements.txt                # Dependances Python
+├── README.md                       # Documentation du projet
+│
+└── Capture d'ecran/
+    ├── KPIs Cards.png
+    ├── Distribution de glucose et IMC .png
+    ├── Age vs Glucose et heatmap.png
+    ├── Diabete par Groupe d'Age et repartition global....png
+    ├── Diagramme de Flux (Sankey) — Parcours de Ris....png
+    ├── Prediction IA — Risque Diabetique Individuel.png
+    ├── Guide Sante — Comprendre vos Mesures.png
+    └── Importance relative.png
+```
 
 ---
 
-# Machine Learning Model
+## Dataset
 
-The application integrates a Random Forest Classifier to estimate diabetes risk.
+Le dataset **Pima Indians Diabetes** contient des mesures medicales de **768 patientes feminines** d'origine Pima (Arizona, USA). Il est largement utilise comme benchmark en machine learning pour la prediction du diabete de type 2.
 
-Users can input medical indicators including:
+| Variable | Description | Unite |
+|---|---|---|
+| Pregnancies | Nombre de grossesses | — |
+| Glucose | Concentration plasmatique en glucose | mg/dL |
+| BloodPressure | Pression arterielle diastolique | mmHg |
+| SkinThickness | Epaisseur du pli cutane tricipital | mm |
+| Insulin | Insuline serique a 2h | uU/mL |
+| BMI | Indice de masse corporelle | kg/m2 |
+| DiabetesPedigreeFunction | Fonction de pedigree (influence genetique) | — |
+| Age | Age de la patiente | annees |
+| Outcome | Diagnostic (0 = Non-Diabetique, 1 = Diabetique) | — |
 
-- Pregnancies
-- Glucose
-- Blood Pressure
-- Skin Thickness
-- Insulin
-- BMI
-- Diabetes Pedigree Function
-- Age
-
-The model predicts:
-
-- Diabetes risk probability
-- Risk classification (High Risk or Low Risk)
+**Prevalence :** 34.9% de cas diabetiques (268 / 768)
 
 ---
 
-# Model Interpretability
+## Preparation des donnees
 
-The dashboard includes a Feature Importance visualization that highlights which medical variables have the strongest influence on the machine learning model.
-
-Typical important features include:
-
-- Glucose
-- BMI
-- Age
-- Diabetes Pedigree Function
+- Remplacement des **zeros impossibles** (Glucose, BloodPressure, SkinThickness, Insulin, BMI) par la mediane de chaque colonne
+- Suppression des **doublons**
+- Creation de variables derivees : `AgeGroup`, `GlucoseLevel`, `BMILevel`, `RiskScore`
+- Score de risque composite pondere : Glucose (35%) + IMC (20%) + Age (15%) + Insuline (15%) + Pedigree (15%)
 
 ---
 
-# Technologies Used
+## Fonctionnalites du Dashboard
 
-This project was developed using the following technologies:
+### Filtres interactifs (sidebar)
+- Statut diabetique (Tous / Diabetique / Non-Diabetique)
+- Plage d'age, IMC, glucose, pression arterielle, insuline, grossesses
 
-- Python
-- Pandas
-- NumPy
-- Plotly
-- Streamlit
-- Scikit-learn
+### KPIs dynamiques
+- Total patientes, cas diabetiques, taux de diabete, glucose moyen, IMC moyen
+
+### Visualisations
+| Graphique | Description |
+|---|---|
+| Histogramme Glucose | Distribution avec seuils cliniques (100 et 126 mg/dL) |
+| Violin IMC | Distribution avec seuils Surpoids/Obesite |
+| Scatter Age vs Glucose | Taille = IMC, couleur = statut |
+| Heatmap Correlation | Matrice des correlations inter-variables |
+| Barplot Age Groups | Prevalence par tranche d'age |
+| Pie Chart | Repartition globale diabetiques / non-diabetiques |
+| Line Chart | Score de risque moyen par groupe d'age |
+| Sankey Flow | Parcours Glucose → IMC → Diagnostic |
+
+### Prediction IA
+- Modele **Random Forest** (100 arbres, train/test 80/20)
+- Accuracy : **~77-80%** selon le split
+- Saisie des 8 variables medicales → probabilite de diabete en temps reel
+- Metriques affichees : Accuracy, Precision, Rappel, F1-Score
+
+### Guide Sante Personnelle
+- Tableau de reference clinique interactif avec seuils medicaux reconnus
+- Evaluation automatique du statut (Normal / Vigilance / Eleve)
+- Recommandation personnalisee selon le profil
 
 ---
 
-# How to Run the Application
+## Installation et lancement
 
-## Install dependencies
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/votre-username/Mini_Projet_Diabete.git
+cd Mini_Projet_Diabete
+```
+
+### 2. Installer les dependances
+
+```bash
 pip install -r requirements.txt
+```
 
-## Run the Streamlit application
-streamlit run app.py
+### 3. Lancer l'application
 
-The dashboard will open automatically in your browser.
+```bash
+python -m streamlit run app.py
+```
 
----
-
-# Key Insights
-
-Some important insights obtained from the analysis include:
-
-- Glucose level shows a strong correlation with diabetes outcome.
-- Higher BMI values are associated with increased diabetes risk.
-- Diabetes prevalence increases with age.
-- Combining multiple medical indicators improves prediction performance.
+L'application s'ouvre automatiquement sur `http://localhost:8501`
 
 ---
 
-# Future Improvements
+## Dependances
 
-Possible future enhancements include:
-
-- Deep learning based prediction models
-- Patient risk clustering
-- Multi-page analytics dashboards
-- Real-time healthcare monitoring
-- Deployment on Streamlit Cloud
+```
+streamlit>=1.32.0
+pandas>=2.0.0
+plotly>=5.18.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
+```
 
 ---
 
-# Author
+## Insights cles
 
-This project was developed as a data analytics and machine learning practice project focusing on interactive visualization and predictive modeling.
+1. **Glucose** est le predicteur le plus discriminant (importance RF > 20%)
+2. Les patientes diabetiques ont un glucose median ~140 mg/dL vs ~107 chez les non-diabetiques
+3. La mediane de l'IMC chez les diabetiques (~34) depasse le seuil d'obesite (30)
+4. Le taux de diabete augmente fortement avec l'age : ~22% chez les 20-30 ans → ~60% apres 50 ans
+5. La combinaison Glucose eleve + Obesite est le parcours dominant vers le diagnostic (visible sur le Sankey)
+6. Le modele Random Forest atteint ~78% d'accuracy avec seulement 8 variables cliniques
 
+---
+
+## Auteur
+
+**Projet realise dans le cadre du module Visualisation de Donnees**  
+2eme annee DUT — Semestre 4 — 2025-2026
