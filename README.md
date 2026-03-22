@@ -44,7 +44,7 @@
 
 | Diagramme Sankey | Guide Sante et Tableau |
 |---|---|
-| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20—%20Parcours%20de%20Ris....png) | ![Guide](Capture%20d'ecran/Guide%20Sante%20—%20Comprendre%20vos%20Mesures.png) |
+| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20—%20Parcours%20de%20Risque.png) | ![Guide](Capture%20d'ecran/Guide%20Sante%20—%20Comprendre%20vos%20Mesures.png) |
 
 | Importance des Variables |
 |---|
