@@ -40,11 +40,11 @@
 
 | Diabete par Age et Repartition | Prediction IA |
 |---|---|
-| ![Age Groups](Capture%20d'ecran/Diabete%20par%20Groupe%20d'Age%20et%20repartition%20global....png) | ![Prediction](Capture%20d'ecran/Prediction%20IA%20—%20Risque%20Diabetique%20Individuel.png) |
+| ![Age Groups](Capture%20d'ecran/Diabete%20par%20Groupe%20d'Age%20et%20repartition%20globale.png) | (Capture%20d'ecran/Prediction%20IA%20—%20Risque%20Diabetique%20Individuel.png) |
 
 | Diagramme Sankey | Guide Sante et Tableau |
 |---|---|
-| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20—%20Parcours%20de%20Risque.png) | ![Guide](Capture%20d'ecran/Guide%20Sante%20—%20Comprendre%20vos%20Mesures.png) |
+| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20—%20Parcours%20de%20Risque.png) |(Capture%20d'ecran/Guide%20Sante%20—%20Comprendre%20vos%20Mesures.png) |
 
 | Importance des Variables |
 |---|
