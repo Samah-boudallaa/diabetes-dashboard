@@ -36,19 +36,19 @@
 
 | KPIs et Distribution | Age vs Glucose et Heatmap |
 |---|---|
-| ![KPIs](Capture%20d'ecran/KPIs%20Cards.png) | ![Age vs Glucose](Capture%20d'ecran/Age%20vs%20Glucose%20et%20heatmap.png) |
+| ![KPIs](Capture%20d'ecran/KPIs%20Cards.png) | ![Age Glucose](Capture%20d'ecran/Age%20vs%20Glucose%20et%20heatmap.png) |
 
 | Diabete par Age et Repartition | Prediction IA |
 |---|---|
-| ![Age Groups](Capture%20d'ecran/Diabete%20par%20Groupe%20d'Age%20et%20repartition%20globale.png) | (Capture%20d'ecran/Prediction%20IA%20—%20Risque%20Diabetique%20Individuel.png) |
+| ![Age Groups](Capture%20d'ecran/Diabete%20par%20Groupe%20d'Age%20et%20repartition%20globale.png) | ![Prediction](Capture%20d'ecran/Prediction%20IA%20%E2%80%94%20Risque%20Diabetique%20Individuel.png) |
 
-| Diagramme Sankey | Guide Sante et Tableau |
+| Diagramme Sankey | Guide Sante |
 |---|---|
-| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20—%20Parcours%20de%20Risque.png) |(Capture%20d'ecran/Guide%20Sante%20—%20Comprendre%20vos%20Mesures.png) |
+| ![Sankey](Capture%20d'ecran/Diagramme%20de%20Flux%20(Sankey)%20%E2%80%94%20Parcours%20de%20Risque.png) | ![Guide](Capture%20d'ecran/Guide%20Sante%20%E2%80%94%20Comprendre%20vos%20Mesures.png) |
 
-| Importance des Variables |
-|---|
-| ![Importance](Capture%20d'ecran/Importance%20relative.png) |
+| Importance des Variables | Distribution Glucose et IMC |
+|---|---|
+| ![Importance](Capture%20d'ecran/Importance%20relative.png) | ![Distribution](Capture%20d'ecran/Distribution%20de%20glucose%20et%20IMC%20.png) |
 
 ---
 
@@ -98,7 +98,7 @@ Le dataset **Pima Indians Diabetes** contient des mesures medicales de **768 pat
 
 ## Preparation des donnees
 
-- Remplacement des **zeros impossibles** (Glucose, BloodPressure, SkinThickness, Insulin, BMI) par la mediane de chaque colonne
+- Remplacement des **zeros impossibles** (Glucose, BloodPressure, SkinThickness, Insulin, BMI) par la mediane
 - Suppression des **doublons**
 - Creation de variables derivees : `AgeGroup`, `GlucoseLevel`, `BMILevel`, `RiskScore`
 - Score de risque composite pondere : Glucose (35%) + IMC (20%) + Age (15%) + Insuline (15%) + Pedigree (15%)
@@ -115,46 +115,47 @@ Le dataset **Pima Indians Diabetes** contient des mesures medicales de **768 pat
 - Total patientes, cas diabetiques, taux de diabete, glucose moyen, IMC moyen
 
 ### Visualisations
-| Graphique | Description |
-|---|---|
-| Histogramme Glucose | Distribution avec seuils cliniques (100 et 126 mg/dL) |
-| Violin IMC | Distribution avec seuils Surpoids/Obesite |
-| Scatter Age vs Glucose | Taille = IMC, couleur = statut |
-| Heatmap Correlation | Matrice des correlations inter-variables |
-| Barplot Age Groups | Prevalence par tranche d'age |
-| Pie Chart | Repartition globale diabetiques / non-diabetiques |
-| Line Chart | Score de risque moyen par groupe d'age |
-| Sankey Flow | Parcours Glucose → IMC → Diagnostic |
+
+| Graphique | Type | Description |
+|---|---|---|
+| Distribution Glucose | Histogramme | Avec seuils cliniques 100 et 126 mg/dL |
+| IMC par Statut | Violin | Seuils Surpoids (25) et Obesite (30) |
+| Age vs Glucose | Scatter | Taille = IMC, couleur = statut diabetique |
+| Correlation | Heatmap | Matrice des correlations inter-variables |
+| Diabete par Age | Barplot | Prevalence par tranche d'age |
+| Repartition | Pie Chart | Proportion diabetiques / non-diabetiques |
+| Score de Risque | Line Chart | Evolution du score composite par age |
+| Parcours de Risque | Sankey | Flux Glucose → IMC → Diagnostic |
 
 ### Prediction IA
-- Modele **Random Forest** (100 arbres, train/test 80/20)
-- Accuracy : **~77-80%** selon le split
-- Saisie des 8 variables medicales → probabilite de diabete en temps reel
-- Metriques affichees : Accuracy, Precision, Rappel, F1-Score
+- Modele **Random Forest** (100 arbres, train/test 80/20, `random_state=42`)
+- Accuracy : **~77-80%**
+- Entree : 8 mesures cliniques → probabilite de diabete en temps reel
+- Metriques : Accuracy, Precision, Rappel, F1-Score
 
 ### Guide Sante Personnelle
-- Tableau de reference clinique interactif avec seuils medicaux reconnus
-- Evaluation automatique du statut (Normal / Vigilance / Eleve)
-- Recommandation personnalisee selon le profil
+- Tableau de reference clinique avec seuils medicaux reconnus (OMS / ADA)
+- Evaluation automatique : Normal / Vigilance / Eleve
+- Recommandation personnalisee selon le profil detecte
 
 ---
 
 ## Installation et lancement
 
-### 1. Cloner le projet
+**1. Cloner le projet**
 
 ```bash
 git clone https://github.com/votre-username/Mini_Projet_Diabete.git
 cd Mini_Projet_Diabete
 ```
 
-### 2. Installer les dependances
+**2. Installer les dependances**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Lancer l'application
+**3. Lancer l'application**
 
 ```bash
 python -m streamlit run app.py
@@ -181,13 +182,13 @@ scikit-learn>=1.4.0
 1. **Glucose** est le predicteur le plus discriminant (importance RF > 20%)
 2. Les patientes diabetiques ont un glucose median ~140 mg/dL vs ~107 chez les non-diabetiques
 3. La mediane de l'IMC chez les diabetiques (~34) depasse le seuil d'obesite (30)
-4. Le taux de diabete augmente fortement avec l'age : ~22% chez les 20-30 ans → ~60% apres 50 ans
-5. La combinaison Glucose eleve + Obesite est le parcours dominant vers le diagnostic (visible sur le Sankey)
+4. Le taux de diabete augmente fortement avec l'age : ~22% chez les 20-30 ans vers ~60% apres 50 ans
+5. La combinaison Glucose eleve + Obesite est le parcours dominant vers le diagnostic (Sankey)
 6. Le modele Random Forest atteint ~78% d'accuracy avec seulement 8 variables cliniques
 
 ---
 
 ## Auteur
 
-**Projet realise dans le cadre du module Visualisation de Donnees**  
+Projet realise dans le cadre du module **Visualisation de Donnees**  
 2eme annee DUT — Semestre 4 — 2025-2026
