@@ -55,7 +55,7 @@
 ## Structure du projet
 
 ```
-Mini_Projet_Diabete/
+diabetes-dashboard /
 │
 ├── app.py                          # Application Streamlit principale
 ├── analysis.ipynb                  # Notebook analyse et visualisations statiques
